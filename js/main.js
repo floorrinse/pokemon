@@ -20,21 +20,20 @@ fetch(`${POKEMON_URL}?limit=151`)
 })
 const pokemonImg = document.querySelector('.pokemon-img');
 
-const getPokemonImg = (event) => {
-  fetch(`${POKEMON_URL}/${event.target.value}`)
+const getPokemonImg = (url) => {
+  fetch(url)
     .then(res => {
       return res.json();
     })
     .then(data => {
-      // console.log(data.sprites.other.dream_world.front_default)
       let svgUrl = data.sprites.other.dream_world.front_default;
       pokemonImg.src = svgUrl;
     });
 }
 
   select.addEventListener('change', event => {
-    let url = `${POKEMON_URL}/${event.target.value}`;
-    getPokemonImg(event, url)
+    let selectedPokemonUrl = `${POKEMON_URL}/${event.target.value}`;
+    getPokemonImg(selectedPokemonUrl)
   })
 
 
