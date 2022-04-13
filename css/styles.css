@@ -1,0 +1,43 @@
+html {
+  height: 100vh;
+  font-size: 1rem;
+  background: linear-gradient(#ffcb05, #2a75bb);
+  font-family: 'Helvetica', 'Arial';
+}
+body {
+  background-repeat: no-repeat;
+}
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+select {
+  font-size: 1rem;
+}
+.section-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10vw;
+}
+.column {
+  flex: 1;
+}
+img {
+  max-width: 250px;
+  max-height: 200px;
+}
+span {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.left-column {
+  text-align: center;
+  padding-right: 2vw;
+}
+.right-column {
+padding-left: 2vw;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
