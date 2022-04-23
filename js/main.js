@@ -1,6 +1,14 @@
 const POKEMON_URL = 'https://pokeapi.co/api/v2/pokemon'
 
+/* const for specified elements for readability */
 const select = document.querySelector('.pokemonList');
+const imgContainer = document.querySelector('.pokemon-img');
+const typeContainer = document.querySelector('#type');
+const experienceContainer = document.querySelector('#experience');
+const heightContainer = document.querySelector('#height');
+const weightContainer = document.querySelector('#weight');
+const knownAbilitiesContainer = document.querySelector('#knownAbilities');
+const hiddenAbilitiesContainer = document.querySelector('#hiddenAbilities');
 
 fetch(`${POKEMON_URL}?limit=151`)
   .then(res => {
@@ -26,14 +34,6 @@ const getPokemonInfo = (url) => {
     })
     .then(data => {
       console.log(data);
-      /* const for specified elements for readability */
-      const imgContainer = document.querySelector('.pokemon-img');
-      const typeContainer = document.querySelector('#type');
-      const experienceContainer = document.querySelector('#experience');
-      const heightContainer = document.querySelector('#height');
-      const weightContainer = document.querySelector('#weight');
-      const knownAbilitiesContainer = document.querySelector('#knownAbilities');
-      const hiddenAbilitiesContainer = document.querySelector('#hiddenAbilities');
 
       /* storing data in vars from pokemon data */
       let svgUrl = data.sprites.other.dream_world.front_default;
