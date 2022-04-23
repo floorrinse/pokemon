@@ -33,7 +33,7 @@ const getPokemonInfo = (url) => {
       return res.json();
     })
     .then(data => {
-      console.log(data);
+      // console.log(data);
 
       /* storing data in vars from pokemon data */
       let svgUrl = data.sprites.other.dream_world.front_default;
@@ -50,7 +50,7 @@ const getPokemonInfo = (url) => {
       function displayArrayItems (array) {
         let itemsString = ``; //TO-DO: figure out how to put a comma into every entry except for ending entry
         for (let item of array) {
-          itemsString += `${item[0].toUpperCase()}` + `${item.slice(1)} `
+           itemsString += `${item[0].toUpperCase()}` + `${item.slice(1)} `
         }
         return itemsString;
       }
