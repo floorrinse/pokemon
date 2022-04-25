@@ -1,4 +1,5 @@
 import displayArrayItems from '../util/displayArrayItems.js'
+import convertToTitleCase from '../util/convertToTitleCase.js';
 
 const POKEMON_URL = 'https://pokeapi.co/api/v2/pokemon'
 
@@ -20,7 +21,7 @@ fetch(`${POKEMON_URL}?limit=151`)
   .then(data => {
     const allPokemon = data.results;
     // console.log(allPokemon)
-    const allPokemonNames = allPokemon.map(pokemon => pokemon.name[0].toUpperCase() + pokemon.name.slice(1)).sort();
+    const allPokemonNames = allPokemon.map(pokemon => convertToTitleCase(pokemon.name)).sort();
     // console.log(allPokemonNames);
     for (let i = 0; i < allPokemonNames.length; i++) {
       const option = document.createElement('option');
@@ -46,15 +47,13 @@ const getPokemonInfo = (url) => {
       let heightNum = Number(data.height * 0.1).toFixed(1);
       let weightNum = Number(data.weight * 0.1).toFixed(1);
       let knownAbilitiesArray = data.abilities.filter(obj => obj.is_hidden === false).map(obj => obj.ability.name);
-      console.log(knownAbilitiesArray)
+      console.log(knownAbilitiesArray);
       let hiddenAbilitiesArray = data.abilities.filter(obj => obj.is_hidden === true).map(obj => obj.ability.name);
-
-      //TO-DO: account for dashes between words
   
       /* put info on the page */
       imgContainer.src = svgUrl;
-      pokemonNameLabel.textContent = `${pokemonName[0].toUpperCase()}` + `${pokemonName.slice(1)}`
-      typeContainer.textContent = elementType > 1 ? displayArrayItems(elementType) : elementType
+      pokemonNameLabel.textContent = convertToTitleCase(pokemonName);
+      typeContainer.textContent = displayArrayItems(elementType);
       experienceContainer.textContent = baseExp
       heightContainer.textContent = `${heightNum} metres`
       weightContainer.textContent = `${weightNum} kilograms`
