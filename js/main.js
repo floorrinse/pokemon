@@ -5,8 +5,12 @@ const POKEMON_URL = 'https://pokeapi.co/api/v2/pokemon'
 
 /* const for specified elements for readability */
 const select = document.querySelector('.pokemonList');
+const pokemonNameTitle = document.querySelector('.pokemonTitle');
 const imgContainer = document.querySelector('.pokemon-img');
-const pokemonNameLabel = document.querySelector('#name');
+const hpStat = document.querySelector('.hpStat');
+const attackStat = document.querySelector('.attackStat');
+const defenseStat = document.querySelector('.defenseStat');
+// const pokemonNameLabel = document.querySelector('#name');
 const typeContainer = document.querySelector('#type');
 const experienceContainer = document.querySelector('#experience');
 const heightContainer = document.querySelector('#height');
@@ -27,7 +31,7 @@ fetch(`${POKEMON_URL}?limit=151`)
       const option = document.createElement('option');
       option.value = allPokemonNames[i];
       option.innerText = allPokemonNames[i];
-      select.appendChild(option)
+      select.appendChild(option);
     }
 })
 
@@ -44,15 +48,22 @@ const getPokemonInfo = (url) => {
       let pokemonName = data.name;
       let elementType = data.types.map(obj => obj.type.name);
       let baseExp = data.base_experience;
+      let hp = data.stats.filter(item => item.stat.name === 'hp')[0].base_stat;
+      let attack = data.stats.filter(item => item.stat.name === 'attack')[0].base_stat;
+      let defense = data.stats.filter(item => item.stat.name === 'defense')[0].base_stat;
       let heightNum = Number(data.height * 0.1).toFixed(1);
       let weightNum = Number(data.weight * 0.1).toFixed(1);
       let knownAbilitiesArray = data.abilities.filter(obj => obj.is_hidden === false).map(obj => obj.ability.name);
-      console.log(knownAbilitiesArray);
       let hiddenAbilitiesArray = data.abilities.filter(obj => obj.is_hidden === true).map(obj => obj.ability.name);
   
       /* put info on the page */
       imgContainer.src = svgUrl;
-      pokemonNameLabel.textContent = convertToTitleCase(pokemonName);
+      imgContainer.alt = pokemonName;
+      pokemonNameTitle.textContent = convertToTitleCase(pokemonName);
+      // pokemonNameLabel.textContent = convertToTitleCase(pokemonName);
+      hpStat.textContent = hp;
+      attackStat.textContent = attack;
+      defenseStat.textContent = defense;
       typeContainer.textContent = displayArrayItems(elementType);
       experienceContainer.textContent = baseExp
       heightContainer.textContent = `${heightNum} metres`
@@ -65,8 +76,5 @@ const getPokemonInfo = (url) => {
   select.addEventListener('change', event => {
     let selectedPokemonUrl = `${POKEMON_URL}/${event.target.value.toLowerCase()}`;
     getPokemonInfo(selectedPokemonUrl);
-
     // pokemonNameLabel.textContent = `Name: ${event.target.value[0].toUpperCase()}` + `${event.target.value.slice(1)}`;
   })
-
-
