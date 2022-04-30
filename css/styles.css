@@ -51,9 +51,16 @@ img {
 .pokemonTitle {
   margin-bottom: 10px;
 }
-.types {
+.statsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+.typesContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.elementType {
+  display: block;
 }
 .stat-label {
   font-weight: 900;
