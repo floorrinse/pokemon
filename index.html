@@ -4,41 +4,48 @@
 <head>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Testing carousel">
-  <meta name="keywords" content="one, two, three">
+  <meta name="Pokemon Selector featuring the original 150 Pokemon" content="">
 
-  <title>Pokemon Viewer</title>
-  <!-- external CSS link -->
+  <title>Pokemon Card Generator</title>
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <!-- Google Fonts -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header>
     <h1>Pokemon Selector</h1>
-    <span>Select your pokemon</span>
   </header>
   <section class="section-container">
     <section class="column left-column">
-      <section class="item">
-        <span>Select</span>
-      </section>
-      <section class="item">
+      <section class="item select-holder">
         <select class="pokemonList" name="" id="">
           <option value="starter" selected>Select Me!</option>
         </select>
       </section>
-      <section class="item">
-        <section class="img container">
-          <section class="container">
-            <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="Pikachu" />
-          </section>
-        </section>
-      </section>
+      <div class="item img-container">
+        <div class="card">
+          <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="" />
+          </div>
+          <h2 class="pokemonTitle">Name</h2>
+          <div class="typesContainer">
+           </div> 
+          <div class="statsContainer">
+            <span class="stat-label">HP</span>
+            <span class="stat-label">Attack</span>
+            <span class="stat-label">Defense</span>
+            <span class="hpStat"></span>
+            <span class="attackStat"></span>
+            <span class="defenseStat"></span>
+        </div>
+      </div>
     </section>
+
     <section class="column right-column">
         <section class="item">
-          <span class="stats">Pokemon Data</span>
+          <span class="stats">More Stats</span>
           <ul>
             <li>Name: <span id="name"></span></li>
             <li>Type: <span id="type"></span></li>
