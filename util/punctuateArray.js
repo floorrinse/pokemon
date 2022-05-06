@@ -1,6 +1,6 @@
 import convertToTitleCase from "./convertToTitleCase.js";
 
-function displayArrayItems(array) {
+function punctuateArray(array) {
   let itemsString = ``;
   array = array.map(item => item.replace('-', ' '));
   for (let item of array) {
@@ -15,4 +15,4 @@ function displayArrayItems(array) {
   return itemsString;
 }
 
-export default displayArrayItems;
+export default punctuateArray;
