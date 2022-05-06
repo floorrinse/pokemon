@@ -17,7 +17,24 @@
 } */
 body {
   min-height: 100vh;
-  background: linear-gradient(156deg, #ffcb05, #2a75bb);
+  /* background: linear-gradient(156deg, #ffcb05, #2a75bb); */ 
+  /* background-image: url('/pokeball.png'); */
+  /* background-size:100px;
+  background-color: rgba(0, 0, 0, 0.5); */
+}
+body::after {
+  content: "";
+  background-image: url('/pokeball.png');
+  background-size:100px;
+  background-color: rgb(251 196 26);
+  opacity: 0.09;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  min-height: 100vh;
 }
 h1 {
   margin-top: 30px;
@@ -59,6 +76,7 @@ input[type=submit] {
 }
 .item {
   border: 1px solid black;
+  border-radius: 10px;
 }
 .img-container {
   /* width: 350px; */
@@ -76,7 +94,7 @@ img {
   margin: 20px auto;
 }
 .pokemonTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 .left-column {
