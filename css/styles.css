@@ -7,15 +7,17 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  height: 100vh;
+/* html {
   width: 100vw;
+  height: 100vh;
   font-size: 1rem;
-  background: linear-gradient(156deg, #ffcb05, #2a75bb);
+
   background-repeat: no-repeat;
-}
+  height: 0px
+} */
 body {
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  background: linear-gradient(156deg, #ffcb05, #2a75bb);
 }
 h1 {
   margin-top: 30px;
@@ -34,14 +36,20 @@ h1 {
   border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 5px;
+  border-radius: 5px;
 }
 input[type=text] {
   background-color: #f1f1f1;
   width: 100%;
+  cursor: textl
 }
 input[type=submit] {
-  background-color: yellow;
+  background-color: rgb(254 204 47);
   color: black;
+  cursor: pointer
+}
+.input[type=submit]:hover {
+  background-color: rgb(251 196 26);
 }
 .section-container {
   display: grid;
@@ -59,7 +67,6 @@ input[type=submit] {
 .card {
   width: 100%;
   padding: 10px 20px;
-  border: 1px solid red;
 }
 img {
   display: block;
@@ -96,8 +103,8 @@ li {
   color: black;
 }
 
-@media only screen and (min-width: 768px) {
-  .section-container {
+@media only screen and (min-width: 568px) {
+  .sectionContainer {
     display: flex;
     flex-direction: row;
     padding: 0 5vw;
