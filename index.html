@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="Pokemon Selector featuring the original 150 Pokemon" content="">
 
-  <title>Pokemon Card Generator</title>
+  <title>OG Pokemon</title>
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- Google Fonts -->
 <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> -->
@@ -16,44 +16,38 @@
 
 <body>
   <header>
-    <h1>Pokemon Selector</h1>
+    <h1 class="h1">Pokemon Index</h1>
   </header>
+  <section class="sectionSearchBar">
+    <form class="searchContainer" autocomplete="off">
+      <div class="searchWrapper">
+        <input class="input searchInput" type="text" name="pokemonSearch" placeholder="Pokemon">
+      </div>
+      <input class="input searchSubmit" type="submit">
+    </form>
+  </section>
   <section class="section-container">
     <section class="column left-column">
-      <section class="item select-holder">
-        <select class="pokemonList" name="" id="">
-          <option value="starter" selected>Select Me!</option>
-        </select>
-      </section>
       <div class="item img-container">
         <div class="card">
+          <span class="pokemonTitle">Name</span>
           <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="" />
           </div>
-          <h2 class="pokemonTitle">Name</h2>
-          <div class="typesContainer">
-           </div> 
-          <div class="statsContainer">
-            <span class="stat-label">HP</span>
-            <span class="stat-label">Attack</span>
-            <span class="stat-label">Defense</span>
-            <span class="hpStat"></span>
-            <span class="attackStat"></span>
-            <span class="defenseStat"></span>
-        </div>
       </div>
     </section>
 
     <section class="column right-column">
-        <section class="item">
-          <span class="stats">More Stats</span>
+        <section class="item statsContainer">
+          <span class="statsLabel">Stats</span>
           <ul>
-            <li>Name: <span id="name"></span></li>
-            <li>Type: <span id="type"></span></li>
-            <li>Base Exp: <span id="experience"></span></li>
-            <li>Height: <span id="height"></span></li>
-            <li>Weight: <span id="weight"></span></li>
-            <li>Abilities: <span id="knownAbilities"></span></li>
-            <li>Hidden Abilities: <span id="hiddenAbilities"></span></li>
+            <li class="li">Type: <span class="stat" id="type"></span></li>
+            <li>HP: <span class="stat" id="hp"></span></li>
+            <li>Attack: <span class="stat" id="attack"></span></li>
+            <li>Defense: <span class="stat" id="defense"></span></li>
+            <li>Height: <span class="stat" id="height"></span></li>
+            <li>Weight: <span class="stat" id="weight"></span></li>
+            <li>Abilities: <span class="stat" id="knownAbilities"></span></li>
+            <li>Hidden Abilities: <span class="stat" id="hiddenAbilities"></span></li>
           </ul>
         </section>
         <section class="item"></section>
