@@ -12,7 +12,7 @@ body {
 }
 body::after {
   content: "";
-  background-image: url('/pokeball.png');
+  background-image: url('/assets/pokeball.png');
   background-size:100px;
   background-color: rgb(251 196 26);
   opacity: 0.09;
