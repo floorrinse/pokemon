@@ -45,7 +45,7 @@ const getPokemonInfo = (url) => {
       hpContainer.textContent = hp;
       attackContainer.textContent = attack;
       defenseContainer.textContent = defense;
-      heightContainer.textContent = `${heightNum} metres`;
+      heightContainer.textContent = `${heightNum} meters`;
       weightContainer.textContent = `${weightNum} kilograms`;
       knownAbilitiesContainer.textContent = punctuateArray(knownAbilitiesArray);
       hiddenAbilitiesContainer.textContent = hiddenAbilitiesArray.length > 0 ? punctuateArray(hiddenAbilitiesArray) : 'none';
