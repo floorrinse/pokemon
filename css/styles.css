@@ -48,17 +48,18 @@ h1 {
 .searchWrapper {
     position: relative;
     display: inline-block;
+    margin-bottom: 10px;
+    padding-right: 0px;
 }
 .input {
   border: 1px solid transparent;
-  background-color: #f1f1f1;
   padding: 5px;
   border-radius: 5px;
 }
 input[type=text] {
-  background-color: #f1f1f1;
+  background-color: #d6d5d5;
   width: 100%;
-  cursor: textl
+  cursor: text;
 }
 input[type=submit] {
   background-color: rgb(254 204 47);
@@ -75,22 +76,21 @@ input[type=submit] {
   flex: 1;
 }
 .item {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 10px;
-}
-.img-container {
-  /* width: 350px; */
-  margin: auto;
 }
 .card {
   width: 100%;
   padding: 10px 20px;
 }
+/* .imgBorder {
+  border: 3px solid rgb(250 214 82);
+  border-radius: 50% 20% / 10% 40%;
+} */
 img {
   display: block;
-  max-width: 200px;
+  max-width: 250px;
   height: 200px;
-  position: relative;
   margin: 20px auto;
 }
 .pokemonTitle {
@@ -126,6 +126,10 @@ li {
     display: flex;
     flex-direction: row;
     padding: 0 5vw;
+  }
+  .searchWrapper {
+    margin-bottom: 0px;
+    padding-right: 10px;
   }
   .left-column {
     padding-right: 2vw;
