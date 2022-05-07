@@ -7,20 +7,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* html {
-  width: 100vw;
-  height: 100vh;
-  font-size: 1rem;
-
-  background-repeat: no-repeat;
-  height: 0px
-} */
 body {
   min-height: 100vh;
-  /* background: linear-gradient(156deg, #ffcb05, #2a75bb); */ 
-  /* background-image: url('/pokeball.png'); */
-  /* background-size:100px;
-  background-color: rgba(0, 0, 0, 0.5); */
 }
 body::after {
   content: "";
@@ -85,21 +73,16 @@ input[type=submit] {
 .column {
   flex: 1;
 }
-.left-column {
+.leftColumn {
   text-align: center;
 }
 .item {
-  /* border: 1px solid black; */
   border-radius: 10px;
 }
 .card {
   width: 100%;
   padding: 10px 20px;
 }
-/* .imgBorder {
-  border: 3px solid rgb(250 214 82);
-  border-radius: 50% 20% / 10% 40%;
-} */
 img {
   display: block;
   max-width: 220px;
@@ -143,10 +126,4 @@ li {
   img {
     margin: 20px auto;
   }
-  /* .left-column {
-    padding-right: 2vw;
-  } */
-  /* .right-column {
-    padding-left: 2vw;
-  } */
 }
