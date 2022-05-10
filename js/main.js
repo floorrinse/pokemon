@@ -35,8 +35,6 @@ const getPokemonInfo = (url) => {
       /* storing data in vars from pokemon data */
       let svgUrl = data.sprites.other.dream_world.front_default;
       let altSvgUrl = data.sprites.other["official-artwork"].front_default;
-      let pokeApipokemonName = data.name;
-      console.log(pokeApipokemonName);
       let pokemonName = data.name;
       let elementType = data.types.map(obj => obj.type.name);
       let hp = data.stats.filter(item => item.stat.name === 'hp')[0].base_stat;
