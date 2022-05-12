@@ -62,8 +62,9 @@ const getPokemonInfo = (url) => {
 
   searchSubmit.addEventListener('click', event => {
     event.preventDefault();
-    let pokemonUrl = `${POKEMON_URL}/${searchInput.value.toLowerCase()}`;
-    if (allPokemonNames.includes(searchInput.value.toLowerCase())) {
+    let sanitizedUserInput = searchInput.value.toLowerCase().trim();
+    let pokemonUrl = `${POKEMON_URL}/${sanitizedUserInput}`;
+    if (allPokemonNames.includes(sanitizedUserInput)) {
       getPokemonInfo(pokemonUrl);
     }
     else {
